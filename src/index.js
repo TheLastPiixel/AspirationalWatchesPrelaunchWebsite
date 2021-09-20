@@ -1,17 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Preloader from "./components/Preloader/Preloader";
+import Timer from "./components/Countdown/Timer";
+import InvictaLogo from "./invictalogoclear.png"
+import TissotLogo from "./tissotlogo.png"
+import StrapsCoLogo from "./strapscologo.png"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import "./styles.css";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function App() {
+  return (
+    <div className="App">
+      <div className="container">
+        <h1 class="awtext">
+          Aspirational Watches
+          <br />
+          <br />
+          <img src={TissotLogo} height="60px"/>
+          <img src={InvictaLogo} height="60px"/>
+          <img src={StrapsCoLogo} height="60px"/>
+          <br />
+          <br />        
+        </h1>
+        <h2>
+          Website Coming Soon!
+        </h2>
+        <Timer />
+        <Preloader />
+      </div>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
